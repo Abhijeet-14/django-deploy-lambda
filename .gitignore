@@ -1,0 +1,30 @@
+.git
+.venv
+venv/
+.env
+env/
+
+# django
+*.pot
+*.log
+*.pyc
+__pycache__
+
+db.sqlite3
+__pycache__/
+*.__pycache__
+*.py[cod]
+*$py.class
+
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+
+
+# coverage
+.coverage
+
+.pre-commit-config.yaml
+
+# key-pair aws
+*.pem
