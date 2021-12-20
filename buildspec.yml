@@ -17,6 +17,7 @@ phases:
     commands:
       - echo pre build phase start
       - if [ ! -v STAGE ]; then echo stage not set; exit 1; fi
+      
       # - zappa manage --no-color $STAGE "collectstatic --noinput"
   build:
     commands:
