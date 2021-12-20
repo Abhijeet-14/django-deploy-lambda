@@ -1,12 +1,15 @@
 version: 0.2
 
+env:
+  shell: bash
+
 phases:
   install:
     commands:
       - echo installing packages
       - virtualenv venv
       - ls
-      - venv/bin/activate
+      - source venv/bin/activate
       - pip install -r requirements.txt
   pre_build:
     commands:
