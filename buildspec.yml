@@ -19,7 +19,7 @@ phases:
       - echo pre build phase start
       - echo $STAGE
       - if [ ! -v STAGE ]; then echo stage not set; exit 1; fi
-      - zappa manage --no-color $STAGE "collectstatic --noinput"
+      # - zappa manage --no-color $STAGE "collectstatic --noinput"
   build:
     commands:
       - echo updating server with new code
