@@ -13,7 +13,6 @@ phases:
       - virtualenv venv
       - source venv/bin/activate
       - pip install -r requirements.txt
-      - aws configure --profile default
   pre_build:
     commands:
       - echo pre build phase start
