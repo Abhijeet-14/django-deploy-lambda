@@ -2,6 +2,9 @@ version: 0.2
 
 env:
   shell: bash
+  variables:
+    STAGE: "dev"
+
 
 phases:
   install:
@@ -14,6 +17,7 @@ phases:
   pre_build:
     commands:
       - echo pre build phase start
+      - echo $STAGE
       - if [ ! -v STAGE ]; then echo stage not set; exit 1; fi
       - zappa manage --no-color $STAGE "collectstatic --noinput"
   build:
@@ -23,4 +27,5 @@ phases:
   post_build:
     commands:
       - echo UPDATE RESULT
+      - echo $CODEBUILD_BUILD_SUCCEEDING
       - if [ $CODEBUILD_BUILD_SUCCEEDING = 0 ]; then zappa rollback $STAGE -n 1; exit 1; fi
