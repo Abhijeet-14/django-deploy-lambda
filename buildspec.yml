@@ -5,7 +5,8 @@ phases:
     commands:
       - echo VIRTUAL ENVIRONMENT & PACKAGE INSTALLATION
       - virtualenv venv
-      - source venv/bin/activate
+      - ls
+      - source /venv/bin/activate
       - pip install -r requirements.txt
   pre_build:
     commands:
