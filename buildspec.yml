@@ -3,19 +3,19 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo VIRTUAL ENVIRONMENT & PACKAGE INSTALLATION
+      - echo installing packages
       - virtualenv venv
       - ls
       - source /venv/bin/activate
       - pip install -r requirements.txt
   pre_build:
     commands:
-      - echo PRE Build start
+      - echo pre build phase start
       - if [ ! -v STAGE ]; then echo stage not set; exit 1; fi
       - zappa manage --no-color $STAGE "collectstatic --noinput"
   build:
     commands:
-      - echo UPDATING WITH NEW CODE
+      - echo updating server with new code
       - zappa update --disable_progress $STAGE
   post_build:
     commands:
